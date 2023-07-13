@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'war'
+    id 'org.gretty' version '3.0.4'
     id 'org.springframework.boot' version '2.6.2'
     id 'io.spring.dependency-management' version '1.1.0'
 }
@@ -34,6 +36,19 @@ dependencies {
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.2'
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+gretty {
+    httpPort = 8888
+    contextPath = "/web"
+    debugPort = 5005
+    debugSuspend = true
+    httpsEnabled = true
+    // 热部署
+    managedClassReload = true
+    // 如果不指定默认容器，则默认使用Jetty
+    // servletContainer = 'tomcat'
+    httpsPort = 4431
 }
+
+//tasks.named('test') {
+//    useJUnitPlatform()
+//}
