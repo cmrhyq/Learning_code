@@ -1,15 +1,13 @@
-package com.cmrhyq.gradle;
+package com.cmrhyq.sub.sub03;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GradleStudyApplicationTests {
+class Sub03ApplicationTests {
 
     @Test
     void contextLoads() {
     }
-
-
 
 }

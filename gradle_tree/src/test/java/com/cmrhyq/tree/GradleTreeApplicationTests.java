@@ -1,15 +1,13 @@
-package com.cmrhyq.gradle;
+package com.cmrhyq.tree;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GradleStudyApplicationTests {
+class GradleTreeApplicationTests {
 
     @Test
     void contextLoads() {
     }
-
-
 
 }

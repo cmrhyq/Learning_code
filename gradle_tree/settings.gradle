@@ -1,0 +1,4 @@
+rootProject.name = 'gradle_tree'
+include('sub01')
+include('sub02')
+include('sub03')
