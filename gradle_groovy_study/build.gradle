@@ -18,6 +18,12 @@ configurations {
     }
 }
 
+//引入插件
+apply plugin: 'idea'
+apply plugin: 'maven-publish'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java'
+
 repositories {
     mavenCentral()
 }

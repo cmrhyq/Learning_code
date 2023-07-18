@@ -40,6 +40,8 @@ dependencies {
 
 tasks.named('test') {
 //    useJUnitPlatform()
+    // 指定任务的组
+    group("test")
     // 任务配置段，在配置阶段执行
     println "this is task example"
     // 任务的行为：在执行阶段执行
