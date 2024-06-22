@@ -1,5 +1,0 @@
-rootProject.name = 'gradle_tree'
-include 'sub_01'
-include 'sub_02'
-include 'sub_03'
-
