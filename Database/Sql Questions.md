@@ -324,3 +324,223 @@ where s1.managerId = s2.id
   and s1.salary > s2.salary;
 ```
 
+
+
+## 查找重复的电子邮箱
+
+表: `Person`
+
+```
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| email       | varchar |
++-------------+---------+
+id 是该表的主键（具有唯一值的列）。
+此表的每一行都包含一封电子邮件。电子邮件不包含大写字母。
+```
+
+编写解决方案来报告所有重复的电子邮件。 请注意，可以保证电子邮件字段不为 NULL。
+
+以 **任意顺序** 返回结果表。
+
+结果格式如下例。
+
+**示例 1:**
+
+```
+输入: 
+Person 表:
++----+---------+
+| id | email   |
++----+---------+
+| 1  | a@b.com |
+| 2  | c@d.com |
+| 3  | a@b.com |
++----+---------+
+输出: 
++---------+
+| Email   |
++---------+
+| a@b.com |
++---------+
+解释: a@b.com 出现了两次。
+```
+
+**解析**
+
+```mysql
+-- 向 GROUP BY 添加条件的一种更常用的方法是使用 HAVING 子句，该子句更为简单高效。
+select email
+from Person
+group by email
+having count(email) > 1;
+```
+
+
+
+## 从不订购的客户
+
+`Customers` 表：
+
+```
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| name        | varchar |
++-------------+---------+
+在 SQL 中，id 是该表的主键。
+该表的每一行都表示客户的 ID 和名称。
+```
+
+`Orders` 表：
+
+```
++-------------+------+
+| Column Name | Type |
++-------------+------+
+| id          | int  |
+| customerId  | int  |
++-------------+------+
+在 SQL 中，id 是该表的主键。
+customerId 是 Customers 表中 ID 的外键( Pandas 中的连接键)。
+该表的每一行都表示订单的 ID 和订购该订单的客户的 ID。
+```
+
+找出所有从不点任何东西的顾客。
+
+以 **任意顺序** 返回结果表。
+
+结果格式如下所示。
+
+**示例 1：**
+
+```
+输入：
+Customers table:
++----+-------+
+| id | name  |
++----+-------+
+| 1  | Joe   |
+| 2  | Henry |
+| 3  | Sam   |
+| 4  | Max   |
++----+-------+
+Orders table:
++----+------------+
+| id | customerId |
++----+------------+
+| 1  | 3          |
+| 2  | 1          |
++----+------------+
+输出：
++-----------+
+| Customers |
++-----------+
+| Henry     |
+| Max       |
++-----------+
+```
+
+**解析**
+
+```mysql
+# Write your MySQL query statement below
+select name as Customers
+from Customers
+where id not in (
+    select customerId
+    from Orders
+)
+```
+
+
+
+## 部门工资最高的员工
+
+表： `Employee`
+
+```
++--------------+---------+
+| 列名          | 类型    |
++--------------+---------+
+| id           | int     |
+| name         | varchar |
+| salary       | int     |
+| departmentId | int     |
++--------------+---------+
+在 SQL 中，id是此表的主键。
+departmentId 是 Department 表中 id 的外键（在 Pandas 中称为 join key）。
+此表的每一行都表示员工的 id、姓名和工资。它还包含他们所在部门的 id。
+```
+
+表： `Department`
+
+```
++-------------+---------+
+| 列名         | 类型    |
++-------------+---------+
+| id          | int     |
+| name        | varchar |
++-------------+---------+
+在 SQL 中，id 是此表的主键列。
+此表的每一行都表示一个部门的 id 及其名称。
+```
+
+查找出每个部门中薪资最高的员工。
+按 **任意顺序** 返回结果表。
+查询结果格式如下例所示。
+
+**示例 1:**
+
+```
+输入：
+Employee 表:
++----+-------+--------+--------------+
+| id | name  | salary | departmentId |
++----+-------+--------+--------------+
+| 1  | Joe   | 70000  | 1            |
+| 2  | Jim   | 90000  | 1            |
+| 3  | Henry | 80000  | 2            |
+| 4  | Sam   | 60000  | 2            |
+| 5  | Max   | 90000  | 1            |
++----+-------+--------+--------------+
+Department 表:
++----+-------+
+| id | name  |
++----+-------+
+| 1  | IT    |
+| 2  | Sales |
++----+-------+
+输出：
++------------+----------+--------+
+| Department | Employee | Salary |
++------------+----------+--------+
+| IT         | Jim      | 90000  |
+| Sales      | Henry    | 80000  |
+| IT         | Max      | 90000  |
++------------+----------+--------+
+解释：Max 和 Jim 在 IT 部门的工资都是最高的，Henry 在销售部的工资最高。
+```
+
+```mysql
+-- 首先表中的数据显示了部门工资最高的员工不止一个
+-- 所以可以先把每个部门最高的工资先查出来
+select departmentId, max(salary)
+from Employee
+group by departmentId;
+-- 下面就可以用left join来连接两个表
+-- 然后通过上面的sql得到的数据来匹配部门编号和工资，查出部门工资最高的员工
+select d.name as Department, e.name as Employee, e.salary as Salary
+from Employee e
+left join Department d on e.departmentId = d.id
+where (e.departmentId, salary) in (
+	select departmentId, max(salary)
+	from Employee
+	group by departmentId;
+)
+-- 这个解析中，Department表就起到一个展示部门名称的作用，核心逻辑还是去处理的Employee表
+```
+
