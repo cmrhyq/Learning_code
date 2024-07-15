@@ -25,7 +25,7 @@
 **案例**
 
 ```java
-class AutoConvert {
+class dataTypeConvert.AutoConvert {
     public static void main(String[] args) {
         // case 1
         int a = 'c';
@@ -42,7 +42,7 @@ class AutoConvert {
 1. 有多种类型的数据混合运算的时候，系统首先自动将所有数据转换成容量最大的那种数据类型，然后在进行计算
 
 ```java
-class AutoConvert {
+class dataTypeConvert.AutoConvert {
     public static void main(String[] args) {
         int num2 = 10;
         // 错误原因：num2 + 1.2 的结果的类型是double，因为在运算过程中自动将数据类型转换成了double，所以赋值给float是错误的
@@ -63,7 +63,7 @@ class AutoConvert {
 2. 当我们把精度大的数据类型赋值给精度小的数据类型时，就会报错，反之就会进行自动类型转换
 
 ```java
-class AutoConvert {
+class dataTypeConvert.AutoConvert {
     public static void main(String[] args) {
         // 错误：精度大的double不能转换成精度小的int
         int n2 = 1.1;
@@ -74,7 +74,7 @@ class AutoConvert {
 3. (byte, short) 和 char 之间不会互相自动抓换
 
 ```java
-class AutoConvert {
+class dataTypeConvert.AutoConvert {
     public static void main(String[] args) {
         // byte范围：-128 ~ 127
         // 当把数值赋值给 byte 时，先判断这个数值是否在byte的范围内。
@@ -96,7 +96,7 @@ class AutoConvert {
 4. byte, short, char 他们三者之间可以计算（包括同类型），在计算时首先转换成int类型
 
 ```java
-class AutoConvert {
+class dataTypeConvert.AutoConvert {
     public static void main(String[] args) {
         byte b1 = 1;
         short s1 = 1;
@@ -110,7 +110,7 @@ class AutoConvert {
 6. 自动提升原则：表达式的结果的类型自动提升为操作数中最大的类型
 
 ```java
-class AutoConvert {
+class dataTypeConvert.AutoConvert {
     public static void main(String[] args) {
         byte b1 = 1;
         short s1 = 102;
@@ -122,3 +122,13 @@ class AutoConvert {
 }
 ```
 
+### 基本数据类型转String
+
+1. 基本数据类型转String
+   1. 语法：将基本数据类型的值+ ""
+   2. 演示：1 + ""
+2. String类型转基本数据类型
+   1. 语法：通过基本类型的包装类调用parseXXX方法即可
+   2. 演示：Integer.parseInt("123")
+
+3. 在将String类型转换成基本数据类型时，要确保String类型能够转成有效的数据，比如，我们不能把 "hello" 转换成一个整数

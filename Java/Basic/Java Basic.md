@@ -122,3 +122,86 @@ class dataTypeConvert.AutoConvert {
 }
 ```
 
+### 基本数据类型转String
+
+1. 基本数据类型转String
+   1. 语法：将基本数据类型的值+ ""
+   2. 演示：1 + ""
+2. String类型转基本数据类型
+   1. 语法：通过基本类型的包装类调用parseXXX方法即可
+   2. 演示：Integer.parseInt("123")
+
+3. 在将String类型转换成基本数据类型时，要确保String类型能够转成有效的数据，比如，我们不能把 "hello" 转换成一个整数
+
+
+
+## 运算符
+
+运算符是一种特殊的符号，用以表示数据的运算、赋值和比较。
+
+1. 算术运算符
+2. 赋值运算符
+3. 关系运算符 [比较运算符]
+4. 逻辑运算符
+5. 位运算符
+6. 三元运算符
+
+### 算术运算符
+
+![image-20240715234754062](MarkdownImageUpload/image-20240715234754062.png)
+
+1. 自增：++作为独立的语句使用时，不管是++i，还是i++都是一样的，等价
+2. 前++和后++都完全等价于 i=i+1
+3. ++i 先自增后赋值
+
+```java
+class ArithmeticOperator {
+    public static void main(String[] args) {
+        int i = 1;
+        // 规则会使用临时变量
+        // 先把i给临时变量 temp=i
+        // 然后i = i + 1
+        // 最后再把temp给i i = temp
+        i = i++;
+        System.out.println(i) // result = 1
+    }
+}
+```
+
+4. i++ 先赋值再自增
+
+```java
+class ArithmeticOperator {
+    public static void main(String[] args) {
+        int i = 1;
+        // 规则会使用临时变量
+        // 先自增：i = i + 1
+        // 然后把i给临时变量：temp=i
+        // 最后再把temp给i：i = temp
+        i = ++i;
+        System.out.println(i) // result = 1
+    }
+}
+```
+
+5. **当对一个数取模时，可以等价 a%b = a-a/b*b，比如：11%9 = 11 - 11/9 * 9**
+
+**例题**
+
+```java
+class ArithmeticOperator {
+    public static void main(String[] args) {
+        int i1 = 10;
+        int i2 = 20;
+        // i1++是先复制再运算，所以先把i1赋值给i，然后i1自增，i = 10, i1 = 11
+        int i = i1++;
+        System.out.println(i); // result = 10
+        System.out.println(i2); // result = 20
+        // --i2是先运算再赋值，所以先把i2自减，然后再把i2赋值给i，i=19,i2=19
+        i = --i2;
+        System.out.println(i); // result = 19
+        System.out.println(i2); // result = 19
+    }
+}
+```
+
