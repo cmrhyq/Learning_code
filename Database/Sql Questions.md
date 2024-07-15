@@ -933,12 +933,11 @@ group by request_at
 | event_date   | date    |
 | games_played | int     |
 +--------------+---------+
+```
 在 SQL 中，表的主键是 (player_id, event_date)。
 这张表展示了一些游戏玩家在游戏平台上的行为活动。
 每行数据记录了一名玩家在退出平台之前，当天使用同一台设备登录平台后打开的游戏的数目（可能是 0 个）。
-```
 
- 
 
 查询每位玩家 **第一次登录平台的日期**。
 
@@ -973,5 +972,114 @@ Result 表：
 select player_id, min(event_date) as "first_login"
 from Activity
 group by player_id
+```
+
+
+
+## 游戏玩法分析Ⅳ
+
+Table: `Activity`
+
+```
++--------------+---------+
+| Column Name  | Type    |
++--------------+---------+
+| player_id    | int     |
+| device_id    | int     |
+| event_date   | date    |
+| games_played | int     |
++--------------+---------+
+```
+（player_id，event_date）是此表的主键（具有唯一值的列的组合）。
+这张表显示了某些游戏的玩家的活动情况。
+每一行是一个玩家的记录，他在某一天使用某个设备注销之前登录并玩了很多游戏（可能是 0）。
+
+
+编写解决方案，报告在首次登录的第二天再次登录的玩家的 **比率**，**四舍五入到小数点后两位**。换句话说，你需要计算从首次登录日期开始至少连续两天登录的玩家的数量，然后除以玩家总数。
+
+结果格式如下所示：
+
+**示例 1：**
+
+```
+输入：
+Activity table:
++-----------+-----------+------------+--------------+
+| player_id | device_id | event_date | games_played |
++-----------+-----------+------------+--------------+
+| 1         | 2         | 2016-03-01 | 5            |
+| 1         | 2         | 2016-03-02 | 6            |
+| 2         | 3         | 2017-06-25 | 1            |
+| 3         | 1         | 2016-03-02 | 0            |
+| 3         | 4         | 2018-07-03 | 5            |
++-----------+-----------+------------+--------------+
+输出：
++-----------+
+| fraction  |
++-----------+
+| 0.33      |
++-----------+
+解释：
+只有 ID 为 1 的玩家在第一天登录后才重新登录，所以答案是 1/3 = 0.33
+```
+
+**解析**
+
+```mysql
+-- 方法1
+# 首先找出每个玩家他的第二天登录的时间，方法是查询出 Activity 表中每个用户的第一天时间，并加上 1.
+select player_id, DATE_ADD(MIN(event_date), INTERVAL 1 DAY) as second_date
+from Activity
+group by player_id;
+# 然后根据这个记录找出，那些玩家是真的第二天登录了的
+select a.player_id as player_id
+from (
+    select player_id, DATE_ADD(MIN(event_date), INTERVAL 1 DAY) as second_date
+    from Activity
+    group by player_id
+) e, Activity a
+where a.event_date = e.second_date
+and a.player_id = e.player_id;
+# 然后再根据 第二天真的登录了的玩家的数量 / 玩家总数 得出结果
+# 再使用 ROUND 来四舍五入两位小数并用IFNULL来保证再没有数据的情况下的结果为0 
+select IFNULL(ROUND(count(distinct(r.player_id)) / count(distinct(a2.player_id)),2),0) as fraction
+from (
+    select a.player_id as player_id
+    from (
+        select player_id, DATE_ADD(MIN(event_date), INTERVAL 1 DAY) as second_date
+        from Activity
+        group by player_id
+    ) e, Activity a
+    where a.event_date = e.second_date
+    and a.player_id = e.player_id
+) r, Activity a2;
+
+-- 方法2
+# 首先找出每个玩家他的第二天登录的时间
+# 然后用where (a2.player_id, a2.event_date) in 玩家第二天登录时间来找出第二天登录了的玩家
+select *
+from Activity a2
+where (a2.player_id, a2.event_date) in (
+    select a1.player_id, DATE_ADD(MIN(event_date), INTERVAL 1 DAY)
+    from Activity a1
+    group by a1.player_id
+)
+# 然后直接用 上面的数据的数量（即第二天真的登录了的玩家的数量）/ 玩家总数 得出结果
+# 再使用 ROUND 来四舍五入两位小数并用IFNULL来保证再没有数据的情况下的结果为0 
+select IFNULL(
+    ROUND(
+        count(distinct(a2.player_id))
+        /
+        (select count(distinct(player_id)) from Activity)
+        ,2
+    )
+    ,0
+) as fraction
+from Activity a2
+where (a2.player_id, a2.event_date) in (
+    select a1.player_id, DATE_ADD(MIN(event_date), INTERVAL 1 DAY)
+    from Activity a1
+    group by a1.player_id
+)
 ```
 
