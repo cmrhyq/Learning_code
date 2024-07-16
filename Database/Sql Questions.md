@@ -1083,3 +1083,83 @@ where (a2.player_id, a2.event_date) in (
 )
 ```
 
+
+
+## 至少有5名直接下属的经理
+
+表: `Employee`
+
+```
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| name        | varchar |
+| department  | varchar |
+| managerId   | int     |
++-------------+---------+
+id 是此表的主键（具有唯一值的列）。
+该表的每一行表示雇员的名字、他们的部门和他们的经理的id。
+如果managerId为空，则该员工没有经理。
+没有员工会成为自己的管理者。
+```
+
+编写一个解决方案，找出至少有**五个直接下属**的经理。
+
+以 **任意顺序** 返回结果表。
+
+查询结果格式如下所示。
+
+**示例 1:**
+
+```
+输入: 
+Employee 表:
++-----+-------+------------+-----------+
+| id  | name  | department | managerId |
++-----+-------+------------+-----------+
+| 101 | John  | A          | Null      |
+| 102 | Dan   | A          | 101       |
+| 103 | James | A          | 101       |
+| 104 | Amy   | A          | 101       |
+| 105 | Anne  | A          | 101       |
+| 106 | Ron   | B          | 101       |
++-----+-------+------------+-----------+
+输出: 
++------+
+| name |
++------+
+| John |
++------+
+```
+
+**解析**
+
+```mysql
+-- 首先将员工表复制一份，用来找出有上级经理的员工的信息
+select e2.*
+from Employee e1, Employee e2
+where e2.managerId = e1.id
+-- 然后再查出这些员工的上级经理的信息
+select e2.*
+from Employee e1, Employee e2
+where e2.managerId = e1.id
+group by e2.managerId
+-- 然后用having判断那些经理是有五个直接下属的
+select e2.managerId
+from Employee e1, Employee e2
+where e2.managerId = e1.id
+group by e2.managerId
+having count(*) >=5
+-- 最后用这些经理的id找到他们的名字
+select e3.name
+from Employee e3
+where id in (
+    select e2.managerId
+    from Employee e1, Employee e2
+    where e2.managerId = e1.id
+    group by e2.managerId
+    having count(*) >=5
+)
+```
+
