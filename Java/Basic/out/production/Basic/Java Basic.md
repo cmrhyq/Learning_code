@@ -132,3 +132,156 @@ class dataTypeConvert.AutoConvert {
    2. 演示：Integer.parseInt("123")
 
 3. 在将String类型转换成基本数据类型时，要确保String类型能够转成有效的数据，比如，我们不能把 "hello" 转换成一个整数
+
+
+
+## 运算符
+
+运算符是一种特殊的符号，用以表示数据的运算、赋值和比较。
+
+1. 算术运算符
+2. 赋值运算符
+3. 关系运算符 [比较运算符]
+4. 逻辑运算符
+5. 位运算符
+6. 三元运算符
+
+### 算术运算符
+
+![image-20240715234754062](MarkdownImageUpload/image-20240715234754062.png)
+
+1. 自增：++作为独立的语句使用时，不管是++i，还是i++都是一样的，等价
+2. 前++和后++都完全等价于 i=i+1
+3. ++i 先自增后赋值
+
+```java
+class ArithmeticOperator {
+    public static void main(String[] args) {
+        int i = 1;
+        // 规则会使用临时变量
+        // 先把i给临时变量 temp=i
+        // 然后i = i + 1
+        // 最后再把temp给i i = temp
+        i = i++;
+        System.out.println(i) // result = 1
+    }
+}
+```
+
+4. i++ 先赋值再自增
+
+```java
+class ArithmeticOperator {
+    public static void main(String[] args) {
+        int i = 1;
+        // 规则会使用临时变量
+        // 先自增：i = i + 1
+        // 然后把i给临时变量：temp=i
+        // 最后再把temp给i：i = temp
+        i = ++i;
+        System.out.println(i) // result = 1
+    }
+}
+```
+
+5. **当对一个数取模时，可以等价 a%b = a-a/b*b，比如：11%9 = 11 - 11/9 * 9**
+
+
+
+**例题**
+
+```java
+class ArithmeticOperator {
+    public static void main(String[] args) {
+        int i1 = 10;
+        int i2 = 20;
+        // i1++是先复制再运算，所以先把i1赋值给i，然后i1自增，i = 10, i1 = 11
+        int i = i1++;
+        System.out.println(i); // result = 10
+        System.out.println(i2); // result = 20
+        // --i2是先运算再赋值，所以先把i2自减，然后再把i2赋值给i，i=19,i2=19
+        i = --i2;
+        System.out.println(i); // result = 19
+        System.out.println(i2); // result = 19
+    }
+}
+```
+
+
+
+## 位运算符
+
+按位与 &
+
+- 两位全为1，结果为1，否则为0
+
+按位或 |
+
+- 两位有一个为1，结果为1，否则为0
+
+按位异或 ^
+
+- 必须是两位一个为0，一个为1，结果才为1，否则为0
+
+按位取反 ~ 
+
+- **运算顺序：原码 -> 反码 -> 补码 -> 补码取反 -> 再取反码 -> 再取补码**
+- 正数的按位取反是本身加一再取负
+- 负数的按位取反是本身减一再取正
+
+算数右移 >>
+
+- 低位溢出，符号位不变，并用符号位补溢出的高位
+- **正数的算术右移相当于右移几位就除以几个2，有小数则忽略小数**
+- 负数的取反运算顺序：原码 -> 补码 -> 符号位不变，加1 -> 右移 -> 按位取反 -> 加1
+
+算数左移 <<
+
+- 符号位不变低位补0
+- **正数的的算术左移相当于左移几位就乘以几个2**
+
+逻辑右移 >>>
+
+- 也叫无符号右移，规则是低位溢出，高位补0
+
+
+
+### 原码反码补码
+
+有符号的数
+
+1. 二进制的最高位是符号位：0表示证书，1表示复数
+2. 正数的原码、反码、补码都一样
+3. 负数的反码 = 它的原码符号位不变，其它位取反
+4. 负数的补码 = 它的反码 + 1，负数的反码 = 负数的补码 - 1
+5. 0的反码、补码都是0
+6. Java没有无符号数，Java中的数都是有符号的
+7. 在计算机运算的时候，它都是以补码的方式来运算
+8. 当我们看运算结果的时候，要看他的原码
+
+
+
+```java
+class Budget {
+    public static void main(String[] args) {
+        
+        int a=1>>2; // a = 0
+        // -1 >> 2
+        // 原码 10000001
+        // 补码 11111110
+        // 加一 11111111
+        // 右移 11111111
+        // 取反 10000000
+        // 加一 10000001
+        int b=-1>>2;// b = -1
+        int c=1<<2; // c = 4
+        int d=-1<<2; // d = -4
+        
+        System.out.println(2&3); // 2
+        System.out.println(~-2); // 1
+        System.out.println(~2); // -3
+        System.out.println(2|3); // 3
+        System.out.println(2^3); // 3
+    }
+}
+```
