@@ -285,3 +285,60 @@ class Budget {
     }
 }
 ```
+
+
+
+## Switch 分支结构
+
+- 表达式数据类型，应和case后的常量类型一致，或者是可以自动转换成可以比较的类型
+- switch中表达式的返回值必须是：（byte, short, int, char, enum, String)
+- case子句中的值必须是常量，不能是变量
+- default子句是可选的
+- break语句用来执行完一个case分支后使程序跳出switch语句块，不写则会按顺序执行到switch结尾
+
+
+
+## for 循环
+
+```java
+class ForCycle {
+
+    public static void main(String[] args) {
+        // Question 1：打印星号直角三角形
+        for (int i = 1; i < 10; i++) {
+            for (int j = 1; j < i; j++) {
+                System.out.print(j + "×" + i + "=" + i * j + "\t");
+            }
+            System.out.println();
+        }
+        
+        // Question 1：打印星号金字塔
+        for (int i = 1; i <= 5; i++) {
+            for (int k = 1; k <= 5 - i; k++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+		// Question 1：打印星号空心星号金字塔
+        int total_loop = 50;
+        for (int i = 1; i <= total_loop; i++) {
+            for (int k = 1; k <= total_loop - i; k++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1 || i == total_loop) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
