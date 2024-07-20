@@ -1,4 +1,13 @@
-# Shenzhen Daily
+<div style="font-family: 'Kanit', sans-serif;text-align: center;border: 10px solid #fff;box-shadow: 1px 1px 2px #e6e6e6;background: linear-gradient(to left top, #11998e, #38ef7d); padding: 50px 0;">
+<div style="color: #fff;">
+    <h3 style="font-size: 25px;font-weight: 600;letter-spacing: 1px;text-transform: uppercase;margin: 0;">
+       Shenzhen Daily
+    </h3>
+    <span style="font-size: 16px;text-transform: capitalize;">
+    	深圳日报
+    </span>
+</div>
+</div>
 
 [toc]
 
@@ -50,3 +59,33 @@
 - A growing number of 越来越多的
 - across the country 遍布全国；祖国各地
 - A new trend tailored 新的国际趋势；国际新潮流
+
+
+
+
+
+## Title: Robot bank lobby managers
+
+**Content**: A humanoid robot provides service at a bank in Shanghai yesterday. China's first training base for intelligent humanoid robots designed to fulfill the role of bank lobby managers was recently launched in Shanghai. The robots possess biomimetic torso structures, sophisticated anthropomorphic motion control, and advanced vision, auditory processing, and speech recognition capabilities.
+
+
+
+**Translate**
+
+**标题**：机器人银行大堂经理
+
+**内容**：昨日，上海一家银行的智能人形机器人开始提供服务。国内首个智能人形机器人培训基地近日在上海正式启用，该机器人将担任银行大堂经理。该机器人拥有仿生躯干结构、复杂的拟人化运动控制以及先进的视觉、听觉处理和语音识别能力。
+
+- bank lobby managers 银行大堂经理
+- humanoid robot 人形机器人
+- provides service 提供服务
+- training base 实训基地
+- intelligent humanoid robots designed 智能人形机器人设计
+- fulfill the role 履行职责
+- was recently 最近
+- was launched 推出
+- biomimetic 仿生的
+- sophisticated anthropomorphic motion control 复杂的拟人运动控制
+- advanced vision 先进的愿景
+- auditory processing 听觉处理
+- speech recognition capabilities 语音识别能力
