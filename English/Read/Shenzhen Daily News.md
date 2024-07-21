@@ -89,3 +89,22 @@
 - advanced vision 先进的愿景
 - auditory processing 听觉处理
 - speech recognition capabilities 语音识别能力
+
+
+
+## Title: Qianhai leads China's FTZ areas in system innovation
+
+**Content**: Shenzhen's Qianhai has secured the top position in system innovation among China's 57 free trade zone(FTZ) areas, according to a report unveiled yesterday by the Free Trade Zone Research institute at Sun Yat-sen University in Guangzhou.
+
+
+
+**Translate**
+
+**标题**：前海引领中国自贸试验区制度创新
+
+**内容**：深圳前海制度创新位居全国57个自贸试验区前列，这是广州中山大学自贸区研究院昨天发布的一份报告。
+
+- the top position in n  *前列 / *头部位置
+- Free Trade Zone 自由贸易区
+- Research institute 研究院
+- Sun Yat-sen University in Guangzhou 广州中山大学

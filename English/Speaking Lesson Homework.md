@@ -37,5 +37,38 @@ Questions 1: Yes, I feel stressed when I think about my future path 当我想到
 
 Questions 2: My stressors is my work  我的压力是我的工作
 
-Questions 3: because this is the situation in China, the fittest will survive.  因为中国的行情就是这样, 优胜劣汰
+Questions 3: because this is the situation in China.  因为中国的行情就是这样, 优胜劣汰
 
+
+
+be stressed 压力
+
+be under stress 在压力之下
+
+be stressed out /over stressed 因心里紧张而被压垮 / 压力过大
+
+be at one’s breaking point = be overwhelmed 达到崩溃的边缘 / 不堪重负
+
+be in over my head  情况复杂得难以应付
+
+have too much on one's plate 很忙；事情太多
+
+be breathing  a sign of relief  松了一口气
+
+feel a weight off my shoulder  卸下我肩上的重担
+
+irritable ：easy to get angry irritate （verb ）易怒的
+
+irritation  irritated = vexed = angry = annoyed = furious 恼怒 = 恼火 = 生气 = 恼火 = 暴怒
+
+fall into trap 掉入陷阱
+
+burst out in agony 陷入痛苦
+
+take the upper hand 占上风/优势
+
+feel deep remorse/feel regretful for 很后悔
+
+let one’s guard down  放松警惕
+
+sth take a serious toll on sth 造成严重损失
