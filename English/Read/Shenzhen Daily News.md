@@ -96,15 +96,25 @@
 
 **Content**: Shenzhen's Qianhai has secured the top position in system innovation among China's 57 free trade zone(FTZ) areas, according to a report unveiled yesterday by the Free Trade Zone Research institute at Sun Yat-sen University in Guangzhou.
 
+​	The 2023-2024 China Pilot Free Trade Zone System Innovation Index places Pudong in Shanghai and Nanshan in Guangzhou in the second an third spots,respectively. The top 10 are rounded out by Lingang in Shanghai, Tianjin, Beijing, Xiamen in Fujian Province, Chengdu in Sichuan Province, Hengqin in Zhuhai, and Chongqing. Hengqin climbed to ninth place this year, displacing Wuhan in Hubei Province.
+
 
 
 **Translate**
 
 **标题**：前海引领中国自贸试验区制度创新
 
-**内容**：深圳前海制度创新位居全国57个自贸试验区前列，这是广州中山大学自贸区研究院昨天发布的一份报告。
+**内容**：深圳前海制度创新位居全国57个自贸试验区前列，这是广州中山大学自贸区研究院昨天发布的一份报告。2023-2024年中国自贸试验区制度创新指数显示，上海浦东和广州南山分别位居第二和第三位。进入前十的还有上海临港新区、天津新区、北京新区、福建厦门新区、四川成都新区、珠海横琴新区和重庆新区。今年横琴新区取代湖北武汉新区，升至第九位。
 
 - the top position in n  *前列 / *头部位置
 - Free Trade Zone 自由贸易区
 - Research institute 研究院
 - Sun Yat-sen University in Guangzhou 广州中山大学
+- Pilot adj 试点的；n 领航员，飞行员
+- Innovation Index Places 创新指数排名
+- The top 10 are rounded out by 前 10 名还包括
+- climbed to 攀升至
+- ninth place 第九位
+
+
+
