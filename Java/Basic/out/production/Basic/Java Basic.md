@@ -285,3 +285,147 @@ class Budget {
     }
 }
 ```
+
+
+
+## Switch 分支结构
+
+- 表达式数据类型，应和case后的常量类型一致，或者是可以自动转换成可以比较的类型
+- switch中表达式的返回值必须是：（byte, short, int, char, enum, String)
+- case子句中的值必须是常量，不能是变量
+- default子句是可选的
+- break语句用来执行完一个case分支后使程序跳出switch语句块，不写则会按顺序执行到switch结尾
+
+
+
+## for 循环
+
+```java
+class ForCycle {
+
+    public static void main(String[] args) {
+        // Question 1：打印星号直角三角形
+        for (int i = 1; i < 10; i++) {
+            for (int j = 1; j < i; j++) {
+                System.out.print(j + "×" + i + "=" + i * j + "\t");
+            }
+            System.out.println();
+        }
+        
+        // Question 1：打印星号金字塔
+        for (int i = 1; i <= 5; i++) {
+            for (int k = 1; k <= 5 - i; k++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+		// Question 1：打印星号空心星号金字塔
+        int total_loop = 50;
+        for (int i = 1; i <= total_loop; i++) {
+            for (int k = 1; k <= total_loop - i; k++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1 || i == total_loop) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+
+
+
+
+## 数组
+
+1. 数组是多个相同类型数据的组合，实现对这些数据的统一管理
+
+2. 数组中的元素可以是任何数据类型，包括基本类型和引用类型，但是不能混用。
+
+3. 数组创建后，如果没有赋值，有默认值 
+
+   1. int=0
+   2. short=0
+   3. byte=0
+   4. long=0
+   5. float=0.0
+   6. double=0.0
+   7. char=\u0000
+   8. boolean=false
+   9. String=null
+
+4. 使用数组的步骤：1.声明数组并开辟空间 2.给数组各个元素赋值 3.使用数组
+
+5. 数组的下标是从0开始的
+
+6. 数组下标必须在指定范围内使用，否则报:下标越界异常，比如int [] arr=new int[5]; 则有效下标为 0-4
+
+7. 数组属引用类型，数组型数据是对象(object)
+
+### 数组赋值机制
+
+1. 基本数据类型赋值，这个值就是具体的数据，而且互相不影响，是值拷贝。
+
+```java
+class DataTypeAssign {
+    public static void main(String[] args) {
+        int n1 = 2;
+        int n2 = n1;
+        n2 = 80;
+        System.out.println(n1) // 2
+        System.out.println(n2) // 80
+    }
+}
+```
+
+2. 数组在默认情况下是引用传递，赋值的是地址，是引用拷贝
+
+```java
+class ArrayAssign {
+    public static void main(String[] args) {
+        int[] arr1 = {1,2,3};
+        int[] arr2 = arr1;
+        arr2[0] = 9;
+        for(int i = 0; i< arr1.length; i++){
+            System.out.println(arr1[i]) // {9,2,3}
+        }
+    }
+}
+```
+
+### 数组拷贝
+
+编写代码实现数组拷贝（内容赋值）
+
+```java
+class ArrayCopy {
+    public static void main(String[] args) {
+        int[] arr1 = {1,2,3};
+        int[] arr2 = new int[arr1.length];
+        
+        for(int i = 0; i< arr1.length; i++){
+            arr2[i] = arr1[i]
+        }
+        
+        arr2[0] = 9;
+        for(int i = 0; i< arr1.length; i++){
+            System.out.println(arr1[i]) // {1,2,3}
+        }
+        
+        for(int j = 0; j< arr2.length; j++){
+            System.out.println(arr1[j]) // {9,2,3}
+        }
+    }
+}
+```
+

@@ -348,3 +348,119 @@ class ForCycle {
 
 ## 数组
 
+1. 数组是多个相同类型数据的组合，实现对这些数据的统一管理
+
+2. 数组中的元素可以是任何数据类型，包括基本类型和引用类型，但是不能混用。
+
+3. 数组创建后，如果没有赋值，有默认值 
+
+   1. int=0
+   2. short=0
+   3. byte=0
+   4. long=0
+   5. float=0.0
+   6. double=0.0
+   7. char=\u0000
+   8. boolean=false
+   9. String=null
+
+4. 使用数组的步骤：1.声明数组并开辟空间 2.给数组各个元素赋值 3.使用数组
+
+5. 数组的下标是从0开始的
+
+6. 数组下标必须在指定范围内使用，否则报:下标越界异常，比如int [] arr=new int[5]; 则有效下标为 0-4
+
+7. 数组属引用类型，数组型数据是对象(object)
+
+### 数组赋值机制
+
+1. 基本数据类型赋值，这个值就是具体的数据，而且互相不影响，是值拷贝。
+
+```java
+class DataTypeAssign {
+    public static void main(String[] args) {
+        int n1 = 2;
+        int n2 = n1;
+        n2 = 80;
+        System.out.println(n1) // 2
+        System.out.println(n2) // 80
+    }
+}
+```
+
+2. 数组在默认情况下是引用传递，赋值的是地址，是引用拷贝
+
+```java
+class ArrayAssign {
+    public static void main(String[] args) {
+        int[] arr1 = {1,2,3};
+        int[] arr2 = arr1;
+        arr2[0] = 9;
+        for(int i = 0; i< arr1.length; i++){
+            System.out.println(arr1[i]) // {9,2,3}
+        }
+    }
+}
+```
+
+### 数组拷贝
+
+编写代码实现数组拷贝（内容赋值）
+
+```java
+class ArrayCopy {
+    public static void main(String[] args) {
+        int[] arr1 = {1,2,3};
+        int[] arr2 = new int[arr1.length];
+        
+        for(int i = 0; i< arr1.length; i++){
+            arr2[i] = arr1[i]
+        }
+        
+        arr2[0] = 9;
+        for(int i = 0; i< arr1.length; i++){
+            System.out.println(arr1[i]) // {1,2,3}
+        }
+        
+        for(int j = 0; j< arr2.length; j++){
+            System.out.println(arr1[j]) // {9,2,3}
+        }
+    }
+}
+```
+
+### 数组反转
+
+把数组的元素内容反转，arr{1,2,3,4,5,6} -> {6,5,4,3,2,1}
+
+```java
+class ArrayReversal {
+    public static void main(String[] args) {
+        // method 1
+        int[] arr1 = {1, 2, 3, 4, 5, 6};
+        int len = arr1.length;
+        for (int i = 0; i < len / 2; i++) {
+            int temp = arr1[i];
+            arr1[i] = arr1[len - i - 1];
+            arr1[len - i - 1] = temp;
+        }
+        for (int i = 0; i < len; i++) {
+            System.out.print(arr1[i] + "\t");
+        }
+        
+        // method 2
+        int[] arr2 = {1, 2, 3, 4, 5, 6};
+        int arr2Length = arr2.length;
+        int[] arr3 = new int[arr2Length];
+        for (int i = 0; i < arr2Length; i++) {
+            arr3[i] = arr2[arr2Length - i - 1];
+        }
+
+        for (int i = 0; i < arr3.length; i++) {
+            System.out.print(arr3[i] + "\t");
+        }
+    }
+}
+```
+
+### 数组扩容
