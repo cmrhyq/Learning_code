@@ -8,6 +8,100 @@
     </span>
 </div>
 </div>
+## 词性与句子成分
+
+句子 = 主语(noun) + 谓语(verb)
+
+
+
+### 名词
+
+1. ### 名词短语
+
+- **名词短语 = 限定词 + 修饰词 + 主体词**。e.g. a good boy
+
+限定词的构成
+
+- 冠词: a, an, the
+- 形容词性物主代词: my, his
+- 名词所有格: one's, Tom's
+- 指示代词: This, That
+- 不定代词: some, every
+- 基数词: one, two
+- 疑问代词: what, which
+
+<div>
+    <table>
+      <thead>
+        <tr>
+          <th>限定词</th>
+          <th>修饰词</th>
+          <th>主体词</th>
+          <th>意思</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">a</td>
+          <td>good</td>
+          <td>boy</td>
+          <td>好孩子</td>
+        </tr>
+        <tr>
+          <td>可省略</td>
+          <td>boy</td>
+          <td>一个男孩</td>
+        </tr>
+        <tr>
+          <td rowspan="2">可数名词复数形式</td>
+          <td>good</td>
+          <td>boys</td>
+          <td>好孩子</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>boys</td>
+          <td>男孩们</td>
+        </tr>
+        <tr>
+          <td rowspan="2">不可数名词</td>
+          <td>good</td>
+          <td>news</td>
+          <td>好消息</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>news</td>
+          <td>消息</td>
+        </tr>
+        <tr>
+          <td rowspan="2">专有名词</td>
+          <td></td>
+          <td>china</td>
+          <td>中国</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Tom</td>
+          <td>汤姆</td>
+        </tr>
+        <tr>
+          <td rowspan="2">the</td>
+          <td>rich</td>
+          <td>people（笼统情况下可省略）</td>
+          <td>富人</td>
+        </tr>
+        <tr>
+          <td>best</td>
+          <td>student（明显情况下可省略）</td>
+          <td>最好的学生</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
+
 ## 代词
 
 ### 人称代词
@@ -100,7 +194,7 @@
 | 指示代词                  | 数   | 用法                                       |
 | ------------------------- | ---- | ------------------------------------------ |
 | This 这个<br/>That 那个   | 单数 | 指代或修饰单数或不可数名词，动词用单数形式 |
-| These 这些<br/>those 那些 | 复数 | 指代或修饰复数名词，动词用复数形式         |
+| These 这些<br/>Those 那些 | 复数 | 指代或修饰复数名词，动词用复数形式         |
 
 1. This、those 指时间或空间上**比较近**的人或物；that、those指时间或空间上**比较远**的人或物
    - This gift is for you and that one is for your borther.
