@@ -464,3 +464,45 @@ class ArrayReversal {
 ```
 
 ### 数组扩容
+
+实现动态的给数据添加元素的效果，实现对数组的扩容
+
+1. 原始数组使用静态分配 `int[] arr = {1,2,3}`
+2. 增加的元素，直接放在数组的最后 `arr = {1,2,3,4}`
+3. 可以通过如下的方式来决定是否继续添加 `添加成功，是否继续？y/n`
+
+```java
+class ArrayAdd {
+
+    public static void main(String[] args) throws IOException {
+        int[] arr = {1, 2, 3, 4, 5};
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("请输入一个数");
+            int input = sc.nextInt();
+            int[] newArr = new int[arr.length + 1];
+            for (int i = 0; i < arr.length; i++) {
+                newArr[i] = arr[i];
+            }
+            newArr[newArr.length - 1] = input;
+            arr = newArr;
+            System.out.print("扩容结果:");
+            for (int i : arr) {
+                System.out.print(i + "\t");
+            }
+            System.out.println("\n添加成功，是否继续？y/n");
+            char choose = sc.next().charAt(0);
+            if (choose == 'n') {
+                System.out.println("程序结束");
+                break;
+            } else if (choose == 'y') {
+                System.out.println("程序继续");
+            } else {
+                System.out.println("输入错误，程序结束");
+                break;
+            }
+        }
+    }
+}
+```
+

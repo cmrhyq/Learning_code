@@ -429,3 +429,38 @@ class ArrayCopy {
 }
 ```
 
+### 数组反转
+
+把数组的元素内容反转，arr{1,2,3,4,5,6} -> {6,5,4,3,2,1}
+
+```java
+class ArrayReversal {
+    public static void main(String[] args) {
+        // method 1
+        int[] arr1 = {1, 2, 3, 4, 5, 6};
+        int len = arr1.length;
+        for (int i = 0; i < len / 2; i++) {
+            int temp = arr1[i];
+            arr1[i] = arr1[len - i - 1];
+            arr1[len - i - 1] = temp;
+        }
+        for (int i = 0; i < len; i++) {
+            System.out.print(arr1[i] + "\t");
+        }
+        
+        // method 2
+        int[] arr2 = {1, 2, 3, 4, 5, 6};
+        int arr2Length = arr2.length;
+        int[] arr3 = new int[arr2Length];
+        for (int i = 0; i < arr2Length; i++) {
+            arr3[i] = arr2[arr2Length - i - 1];
+        }
+
+        for (int i = 0; i < arr3.length; i++) {
+            System.out.print(arr3[i] + "\t");
+        }
+    }
+}
+```
+
+### 数组扩容
