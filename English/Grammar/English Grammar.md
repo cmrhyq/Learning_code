@@ -99,6 +99,10 @@
       </tbody>
     </table>
 </div>
+2. ### 可数/不可数名词
+
+![image-20240725230731135](MarkdownImageUpload/image-20240725230731135.png)
+
 
 
 
@@ -112,9 +116,9 @@
         <tr>
           <th></th>
           <th></th>
-          <th>主格</th>
-          <th>宾格</th>
-          <th>形容词性物主代词</th>
+          <th>主格 s</th>
+          <th>宾格 o.p</th>
+          <th>形容词性物主代词 adj+n</th>
           <th>名词性物主代词</th>
           <th>反身代词</th>
         </tr>
@@ -161,14 +165,14 @@
           <td>him 他</td>
           <td>his 他的</td>
           <td>his 他的</td>
-          <td>himself</td>
+          <td>himself 他自己</td>
         </tr>
         <tr>
           <td>she 她</td>
           <td>her 她</td>
           <td>her 她的</td>
           <td>hers 她的</td>
-          <td>herself 他自己</td>
+          <td>herself 她自己</td>
         </tr>
         <tr>
           <td>it 它</td>
@@ -188,6 +192,34 @@
       </tbody>
     </table>
 </div>
+
+1. 主格作主语（s）
+
+   eg：**I** like english
+
+2. 宾格作宾语（o）或表语（p）
+
+​		eg：I hate **him**. him 作宾语
+
+​				It is **me**. me 作表语
+
+3. 形容词性物主代词 + n = 名词性物主代词
+
+​		eg：This is my book. my形容性物主代词修饰后面的book名词
+
+​				The book is ours. ours作名词性物主代词后面不可接名词
+
+​		总结：形容性物主代词后面接名词，名词性物主代词后面不接名词
+
+4. 反身代词得现有该人称
+
+​		eg：I love her. 我爱她
+
+​				I leve myself. 我爱我自己
+
+​				I love herself. × 不能我爱他自己
+
+
 
 ### 指示代词
 
