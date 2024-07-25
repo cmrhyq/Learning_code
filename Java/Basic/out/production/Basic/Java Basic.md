@@ -464,3 +464,108 @@ class ArrayReversal {
 ```
 
 ### 数组扩容
+
+实现动态的给数据添加元素的效果，实现对数组的扩容
+
+1. 原始数组使用静态分配 `int[] arr = {1,2,3}`
+2. 增加的元素，直接放在数组的最后 `arr = {1,2,3,4}`
+3. 可以通过如下的方式来决定是否继续添加 `添加成功，是否继续？y/n`
+
+```java
+class ArrayAdd {
+
+    public static void main(String[] args) throws IOException {
+        int[] arr = {1, 2, 3, 4, 5};
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("请输入一个数");
+            int input = sc.nextInt();
+            int[] newArr = new int[arr.length + 1];
+            for (int i = 0; i < arr.length; i++) {
+                newArr[i] = arr[i];
+            }
+            newArr[newArr.length - 1] = input;
+            arr = newArr;
+            System.out.print("扩容结果:");
+            for (int i : arr) {
+                System.out.print(i + "\t");
+            }
+            System.out.println("\n添加成功，是否继续？y/n");
+            char choose = sc.next().charAt(0);
+            if (choose == 'n') {
+                System.out.println("程序结束");
+                break;
+            } else if (choose == 'y') {
+                System.out.println("程序继续");
+            } else {
+                System.out.println("输入错误，程序结束");
+                break;
+            }
+        }
+    }
+}
+```
+
+有一个数组{1,2,3,4,5}，可以将该数组进行所见，提示是否继续缩减，每次缩减最后一个元素，只剩一个元素时提示不能再缩减
+
+```java
+class ArrayReduce {
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            if (arr.length == 1) {
+                System.out.println("只剩一个元素，不能再缩减");
+                break;
+            } else {
+                int[] reduceArr = new int[arr.length - 1];
+                for (int i = 0; i < reduceArr.length; i++) {
+                    reduceArr[i] = arr[i];
+                }
+                arr = reduceArr;
+                System.out.print("缩容结果:");
+                for (int i : arr) {
+                    System.out.print(i + "\t");
+                }
+                System.out.println("\n缩容成功，是否继续？y/n");
+                char choose = sc.next().charAt(0);
+                if (choose == 'n') {
+                    System.out.println("程序结束");
+                    break;
+                } else if (choose == 'y') {
+                    System.out.println("程序继续");
+                } else {
+                    System.out.println("输入错误，程序结束");
+                    break;
+                }
+            }
+        }
+    }
+}
+```
+
+
+
+## 排序
+
+排序是将多个数据，依指定的顺序进行排列的过程。
+
+1. 内部排序
+   - 指将需要处理的所有数据都加载到内部存储器中进行排序。包括(交换式排序法、选择式排序法和插入式排序法)
+2. 外部排序法
+   - 数据量过大，无法全部加载到内存中，需要借助外部存储进行排序。包括(合并排序法和直接合并排序法)
+
+### 冒泡排序
+
+使用冒泡排序将 24,69,80,57,13 排成一个从小到大的有序数列
+
+```
+class BubbleSort {
+
+    public static void main(String[] args) {
+    
+    }
+}
+```
+

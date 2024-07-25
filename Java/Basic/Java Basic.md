@@ -506,3 +506,98 @@ class ArrayAdd {
 }
 ```
 
+有一个数组{1,2,3,4,5}，可以将该数组进行所见，提示是否继续缩减，每次缩减最后一个元素，只剩一个元素时提示不能再缩减
+
+```java
+class ArrayReduce {
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            if (arr.length == 1) {
+                System.out.println("只剩一个元素，不能再缩减");
+                break;
+            } else {
+                int[] reduceArr = new int[arr.length - 1];
+                for (int i = 0; i < reduceArr.length; i++) {
+                    reduceArr[i] = arr[i];
+                }
+                arr = reduceArr;
+                System.out.print("缩容结果:");
+                for (int i : arr) {
+                    System.out.print(i + "\t");
+                }
+                System.out.println("\n缩容成功，是否继续？y/n");
+                char choose = sc.next().charAt(0);
+                if (choose == 'n') {
+                    System.out.println("程序结束");
+                    break;
+                } else if (choose == 'y') {
+                    System.out.println("程序继续");
+                } else {
+                    System.out.println("输入错误，程序结束");
+                    break;
+                }
+            }
+        }
+    }
+}
+```
+
+
+
+## 排序
+
+排序是将多个数据，依指定的顺序进行排列的过程。
+
+1. 内部排序
+   - 指将需要处理的所有数据都加载到内部存储器中进行排序。包括(交换式排序法、选择式排序法和插入式排序法)
+2. 外部排序法
+   - 数据量过大，无法全部加载到内存中，需要借助外部存储进行排序。包括(合并排序法和直接合并排序法)
+
+### 冒泡排序
+
+使用冒泡排序将 [24,69,80,57,13] 排成一个从小到大的有序数列
+
+**分析**
+
+![image-20240726005949289](MarkdownImageUpload/image-20240726005949289.png)
+
+![image-20240726010105727](MarkdownImageUpload/image-20240726010105727.png)
+
+**总结**
+
+1. 一共有5个元素
+2. 一共进行了4轮排序，可以看成是外层循环
+3. 每一轮排序可以确定一个数的位置
+4. 当比较时，如果前面的数大于后面的数，就交换位置
+5. 每一轮的比较在减少
+
+**代码**
+
+```java
+class BubbleSort {
+
+    public static void main(String[] args) {
+        int[] bubble = {24, 69, 80, 57, 13};
+        // 根据分析得知，冒泡排序只会进行 数组长度 - 1 次
+        // 所以，用外层for控制排序的轮数
+        for (int j = 0; j < bubble.length - 1; j++) {
+            // 用内层for控制每次排序的比较次数, 每次排序的比较次数 = 数组长度 - 当前排序轮数
+            for (int i = 0; i < (bubble.length - 1) - j; i++) {
+                if (bubble[i] > bubble[i + 1]) {
+                    // 用临时变量来实现交换
+                    int temp = bubble[i];
+                    bubble[i] = bubble[i + 1];
+                    bubble[i + 1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < bubble.length; i++) {
+            System.out.print(bubble[i] + "\t");
+        }
+    }
+}
+```
+
