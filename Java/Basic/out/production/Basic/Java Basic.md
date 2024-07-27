@@ -558,13 +558,74 @@ class ArrayReduce {
 
 ### 冒泡排序
 
-使用冒泡排序将 24,69,80,57,13 排成一个从小到大的有序数列
+使用冒泡排序将 [24,69,80,57,13] 排成一个从小到大的有序数列
 
-```
+**分析**
+
+![image-20240726005949289](MarkdownImageUpload/image-20240726005949289.png)
+
+![image-20240726010105727](MarkdownImageUpload/image-20240726010105727.png)
+
+**总结**
+
+1. 一共有5个元素
+2. 一共进行了4轮排序，可以看成是外层循环
+3. 每一轮排序可以确定一个数的位置
+4. 当比较时，如果前面的数大于后面的数，就交换位置
+5. 每一轮的比较在减少
+
+**代码**
+
+```java
 class BubbleSort {
 
     public static void main(String[] args) {
-    
+        int[] bubble = {24, 69, 80, 57, 13};
+        // 根据分析得知，冒泡排序只会进行 数组长度 - 1 次
+        // 所以，用外层for控制排序的轮数
+        for (int j = 0; j < bubble.length - 1; j++) {
+            // 用内层for控制每次排序的比较次数, 每次排序的比较次数 = 数组长度 - 当前排序轮数
+            for (int i = 0; i < (bubble.length - 1) - j; i++) {
+                if (bubble[i] > bubble[i + 1]) {
+                    // 用临时变量来实现交换
+                    int temp = bubble[i];
+                    bubble[i] = bubble[i + 1];
+                    bubble[i + 1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < bubble.length; i++) {
+            System.out.print(bubble[i] + "\t");
+        }
+    }
+}
+```
+
+
+
+## 二维数组
+
+![image-20240728020903289](MarkdownImageUpload/image-20240728020903289.png)
+
+```java
+class TwoDimensionalArray {
+
+    public static void main(String[] args) {
+        int[][] arr = new int[3][];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = new int[i + 1];
+
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = i + 1;
+            }
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + "\t");
+            }
+            System.out.println();
+        }
     }
 }
 ```
