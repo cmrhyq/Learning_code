@@ -547,7 +547,7 @@ class ArrayReduce {
 
 
 
-## 排序
+### 排序
 
 排序是将多个数据，依指定的顺序进行排列的过程。
 
@@ -556,7 +556,7 @@ class ArrayReduce {
 2. 外部排序法
    - 数据量过大，无法全部加载到内存中，需要借助外部存储进行排序。包括(合并排序法和直接合并排序法)
 
-### 冒泡排序
+#### 冒泡排序
 
 使用冒泡排序将 [24,69,80,57,13] 排成一个从小到大的有序数列
 
@@ -603,7 +603,7 @@ class BubbleSort {
 
 
 
-## 二维数组
+### 二维数组
 
 ![image-20240728020903289](MarkdownImageUpload/image-20240728020903289.png)
 
@@ -625,6 +625,113 @@ class TwoDimensionalArray {
                 System.out.print(arr[i][j] + "\t");
             }
             System.out.println();
+        }
+    }
+}
+```
+
+**题目**：用二维数组打印10行的杨辉三角
+
+1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
+1 5 10 10 5 1
+...........
+
+**提示**：
+
+- 第一行有1个元素，第N行有N个元素
+- 每一行的第一个和最后一个元素都是1
+- 从第三行开始，对于非第一个元素和最后一个元素的值都是 `arr[i][j] = arr[i-1][j] + arr[i-1][j-1]`
+
+```java
+class YangHuiTriangle {
+
+    /**
+     * - 第一行有1个元素，第N行有N个元素
+     * - 每一行的第一个和最后一个元素都是1
+     * - 从第三行开始，对于非第一个元素和最后一个元素的值都是 arr[i][j] = arr[i-1][j] + arr[i-1][j-1]
+     * @param args
+     */
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please Enter line number");
+        int line = sc.nextInt();
+        int[][] triangle = new int[line][];
+        for (int i = 0; i < triangle.length; i++) {
+            triangle[i] = new int[i + 1];
+            for (int j = 0; j < triangle[i].length; j++) {
+                if (j == 0 || j == triangle[i].length - 1) {
+                    triangle[i][j] = 1;
+                } else {
+                    triangle[i][j] = triangle[i - 1][j] + triangle[i - 1][j - 1];
+                }
+            }
+        }
+
+        for (int[] triangles : triangle) {
+            for (int anInt : triangles) {
+                System.out.print(anInt + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+#### 使用细节
+
+1. 一维数组的声明方式：int[] x 或者 int x[]
+2. 二维数组的声明方式：`int[][] y` 或者 `int[] y[]` 或者 `int y[][]`
+3. 二维数组实际上是由多个一个为数组组成的，它的各个一维数组的长度可以相同，也可以不同
+   1. `map[][]` 是一个二维数组，`int map[][] = {{1,2},{2,4,3}}` ，map[0] 是一个含有两个元素的一维数组，map[1] 是一个含有三个元素的一维数组，也称之为列数不等的二维数组
+
+
+
+### 例题
+
+有一个升序的数组，要求插入一个元素，该数组顺序还是升序，比如：[10,12,45,90]，插入一个23后，数组为[10,12,23,45,90]
+
+```java
+class AscendingArray {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = {10, 12, 45, 90};
+        System.out.print("Enter the number: ");
+        int number = sc.nextInt();
+        int index = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (number <= arr[i]) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index == -1) {
+            index = arr.length;
+        }
+
+        int[] newArr = new int[arr.length + 1];
+        for (int i = 0, j = 0; i < newArr.length; i++) {
+            // 声明了两个指针i，j
+            // i指针指向新数组的每一个位置
+            // j指针指向旧数组
+            // i指针的值不等于 index索引的时候，只有这个时候才能把j指针当前指向旧数组的指拿给新数组，然后 j指针指向下一位
+            // i指针的指等于 index索引的时候，表明 i指针当前所在的位置是要插入的位置，就把要插入的数放到这个位置，然后 j指针不动
+            if (i != index) {
+                newArr[i] = arr[j];
+                j++;
+            } else {
+                newArr[i] = number;
+            }
+        }
+        arr = newArr;
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "\t");
         }
     }
 }

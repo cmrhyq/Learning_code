@@ -630,3 +630,60 @@ class TwoDimensionalArray {
 }
 ```
 
+**题目**：用二维数组打印10行的杨辉三角
+
+1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
+1 5 10 10 5 1
+...........
+
+**提示**：
+
+- 第一行有1个元素，第N行有N个元素
+- 每一行的第一个和最后一个元素都是1
+- 从第三行开始，对于非第一个元素和最后一个元素的值都是 `arr[i][j] = arr[i-1][j] + arr[i-1][j-1]`
+
+```java
+class YangHuiTriangle {
+
+    /**
+     * - 第一行有1个元素，第N行有N个元素
+     * - 每一行的第一个和最后一个元素都是1
+     * - 从第三行开始，对于非第一个元素和最后一个元素的值都是 arr[i][j] = arr[i-1][j] + arr[i-1][j-1]
+     * @param args
+     */
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please Enter line number");
+        int line = sc.nextInt();
+        int[][] triangle = new int[line][];
+        for (int i = 0; i < triangle.length; i++) {
+            triangle[i] = new int[i + 1];
+            for (int j = 0; j < triangle[i].length; j++) {
+                if (j == 0 || j == triangle[i].length - 1) {
+                    triangle[i][j] = 1;
+                } else {
+                    triangle[i][j] = triangle[i - 1][j] + triangle[i - 1][j - 1];
+                }
+            }
+        }
+
+        for (int[] triangles : triangle) {
+            for (int anInt : triangles) {
+                System.out.print(anInt + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+### 使用细节
+
+1. 一维数组的声明方式：int[] x 或者 int x[]
+2. 二维数组的声明方式：`int[][] y` 或者 `int[] y[]` 或者 `int y[][]`
+3. 二维数组实际上是由多个一个为数组组成的，它的各个一维数组的长度可以相同，也可以不同
+   1. `map[][]` 是一个二维数组，`int map[][] = {{1,2},{2,4,3}}` ，map[0] 是一个含有两个元素的一维数组，map[1] 是一个含有三个元素的一维数组，也称之为列数不等的二维数组
