@@ -100,6 +100,7 @@
 ​	The report evaluates performance across key areas such as trade facilitation, investment liberalization, financial reform and innovation, governance, and the legal environment, as explained by Fu Zhengping, the institute's director.
 ​	Since establishing the fist pilot FTZ in Shanghai in 2013, China now has 21 FTZs nationwide. A total of 302 institutional innovations have bean nurtured in these areas before being promoted nationwide, according to the Ministry of Commerce.
 ​	Over the past decade, these zones accounted for 18% of the nation's foreign investment and foreign trade volume, despite occupying less than 0.04% of the country's land area.
+​	After eight years of operation, the GDP of the Guangdong Pilot FTZ more than doubled to 466.3 billion yuan(US$65.4 billion) in 2022. The zone has concentrated on developing a modern industrial system encompassing sectors such as automobiles, artificial intelligence, pharmaceuticals, health care, integrated circuits, modern financial services, and professional services, according to the provincial commerce department.
 
 
 
@@ -112,11 +113,12 @@
 	该研究所所长傅正平介绍说，报告评估了贸易便利化、投资自由化、金融改革创新、政府治理、法制环境等关键领域的绩效。
 	自2013年在上海设立首个自贸试验区以来，中国目前在全国范围内已有21个自贸试验区。据商务部介绍，共有302项制度创新在这些地区得到培育并向全国推广。
 	过去10年，这些开发区以不到全国0.04%的土地面积，吸收了全国18%的外商投资和对外贸易额。
+	经过八年的运营，广东自贸试验区的GDP在2022年增长了一倍多，达到4663亿元人名币（654亿美元）。据省商务厅介绍，该试验区致力于发展现代工业体系，涵盖汽车、人工智能，制药、医疗健康，集成电路、现代金融服务和专业服务等领域。
 
 
 
 
-- the top position in n  *前列 / *头部位置
+- the top position in n  * 前列 / * 头部位置
 - Free Trade Zone 自由贸易区
 - Research institute 研究院
 - Sun Yat-sen University in Guangzhou 广州中山大学
@@ -134,6 +136,16 @@
 - Over the past decade 在过去十年
 - foreign investment 外来投资
 - foreign trade volume 对外贸易额
+- After eight years operation 经过八年的运营
+- n More than doubled  n 增长了一倍多
+- automobiles 汽车
+- artificial intelligence 人工智能
+- pharmaceuticals 制药 pharmaceutical 制药的；配药的
+- health care 医疗保健 / 医疗健康
+- integrated circuits 集成电路
+- modern financial services 现代金融服务
+- professional services 专业服务
+- provincial commerce department 省商务厅
 
 
 

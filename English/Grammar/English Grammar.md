@@ -245,6 +245,15 @@
 4. that/those 还常常用来指代提到过的名词，以避免重复；that特指不可数名词或可数名词单数（物）；those特指可数名词复数（人或物）
    - The days in summer are longer than those in winter
      - 夏天的白天比冬天的白天长 （those代替the days）
+5. 指代同类不同个的东西，**that指代可数名词单数和不可数名词**，**those指代可数名词复数**
+   - The waether of Chengdu is  cooler than that of Chongqing
+      - 成都的天气比重庆的凉快（the weather是不可数名词，所以用that代替Chongqing前面的the weather）
+
+   - The oranges of Huainan are sweeter than those of Huaibei
+      - 淮南的橘子比淮北的橘子甜（the oranges是可数名词复数，所以用those代替Huaibei前面的the oranges）
+
+
+
 
 ### 不定代词
 
@@ -303,6 +312,7 @@
       </tbody>
     </table>
 </div>
+
 
 ### 疑问代词
 
@@ -367,16 +377,16 @@
 1. who 意思是“谁”，既可以指单数也可以指复数
    - **who** will be the leader of the team
      - 谁将会是这个队的领队（作主语）
-2. whom 在句子中只能作动词或介词的宾语
+2. whom 在句子中只能**作动词或介词的宾语**
    1. With **whom** did you go to the concert
       1. 你和谁去听的音乐会（作介词的宾语）
-3. whose 表示“谁的”，既可以指单数也可指复数
+3. whose 表示“谁的”，既**可以指单数也可指复数**
    1. They each draw a picture, but **whose** is beast?
       1. 他们没人画了一幅画，但是谁的最好？（作主语）
-4. which即可指人也可指物，即可指单数也可指复数
+4. which即**可指人也可指物**，即**可指单数也可指复数**
    1. I don't know which to choose
       1. 我不知道该选哪个（作宾语）
-5. what意思是“什么”，代替或修饰可数或不可数名词
+5. what意思是“什么”，**代替或修饰可数或不可数名词**
    1. What are your parents?
       1. 你父母是干什么的（作表语）
    2. What interests do you have
