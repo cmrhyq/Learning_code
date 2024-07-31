@@ -739,7 +739,7 @@ class AscendingArray {
 
 
 
-## 类于对象
+## 类与对象
 
 ![image-20240730003715897](MarkdownImageUpload/image-20240730003715897.png)
 
@@ -751,3 +751,63 @@ class AscendingArray {
 1. 属性的定义语法同变量，示例:访问修饰符 属性类型 属性名,
 2. 属性的定义类型可以为任意类型，包含基本类型或引用类型
 3. 属性如果不赋值，有默认值，规则和数组一致。
+
+### 类和对象的内存分配机制
+
+1. 栈：一般存放基本数据类型（局部变量）
+2. 堆：存放对象、数组等
+3. 方法区：常量池（常量、比如字符串），类加载信息
+
+### 对象创建流程
+
+```java
+Person p = new Person();
+p.name = "jack";
+p.age = 10;
+```
+
+1. 首先加载类信息（属性和方法信息，只会加载一次）
+2. 在堆中分配空间，进行默认初始化，把地址赋值给p，p就指向对象
+3. 进行指定初始化，比如 p.name = "jack" 和 p.age = 10
+
+
+
+## 成员方法
+
+某些情况下，需要定义成员方法。比如人类：除了一些属性外（姓名、年龄），我们还可以有一些行为（说话、跑步）。这时候就需要用成员方法才能完成。
+
+```java
+class Person {
+    String name;
+    int age;
+    // 成员方法
+    public void speak(word){
+        System.out.println("You say: " + word);
+    }
+}
+```
+
+### 成员方法调用机制
+
+```java
+class ClassMethod {
+    public static void main(String[] args) {
+    	Person p1 = new Person();
+        int return = p1.getSum(10,20);
+        System.out.pringln(return);
+    }
+    
+    public int getSum(int num1, int num2){
+        return num1 + num2;
+    }
+}
+```
+
+![image-20240801000357248](MarkdownImageUpload/image-20240801000357248.png)
+
+**方法调用小结**
+
+1. 当程序执行到方法的时候，就会开辟一个独立的空间（栈空间）
+2. 当方法执行完毕或执行到return语句时，就会返回
+3. 返回到调用方法的地方
+4. 返回后，继续执行方法后面的代码
