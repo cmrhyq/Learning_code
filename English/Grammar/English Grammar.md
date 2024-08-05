@@ -8,107 +8,51 @@
     </span>
 </div>
 </div>
-## 句子成分与基本句型
+# 句子成分与基本句型
 
-句子 = 主语(noun) + 谓语(verb)
-
-
-
-### 名词
-
-1. ### 名词短语
-
-- **名词短语 = 限定词 + 修饰词 + 主体词**。e.g. a good boy
-
-限定词的构成
-
-- 冠词: a, an, the
-- 形容词性物主代词: my, his
-- 名词所有格: one's, Tom's
-- 指示代词: This, That
-- 不定代词: some, every
-- 基数词: one, two
-- 疑问代词: what, which
-
-<div>
-    <table>
-      <thead>
-        <tr>
-          <th>限定词</th>
-          <th>修饰词</th>
-          <th>主体词</th>
-          <th>意思</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td rowspan="2">a</td>
-          <td>good</td>
-          <td>boy</td>
-          <td>好孩子</td>
-        </tr>
-        <tr>
-          <td>可省略</td>
-          <td>boy</td>
-          <td>一个男孩</td>
-        </tr>
-        <tr>
-          <td rowspan="2">可数名词复数形式</td>
-          <td>good</td>
-          <td>boys</td>
-          <td>好孩子</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>boys</td>
-          <td>男孩们</td>
-        </tr>
-        <tr>
-          <td rowspan="2">不可数名词</td>
-          <td>good</td>
-          <td>news</td>
-          <td>好消息</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>news</td>
-          <td>消息</td>
-        </tr>
-        <tr>
-          <td rowspan="2">专有名词</td>
-          <td></td>
-          <td>china</td>
-          <td>中国</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Tom</td>
-          <td>汤姆</td>
-        </tr>
-        <tr>
-          <td rowspan="2">the</td>
-          <td>rich</td>
-          <td>people（笼统情况下可省略）</td>
-          <td>富人</td>
-        </tr>
-        <tr>
-          <td>best</td>
-          <td>student（明显情况下可省略）</td>
-          <td>最好的学生</td>
-        </tr>
-      </tbody>
-    </table>
-</div>
-2. ### 可数/不可数名词
-
-![image-20240725230731135](MarkdownImageUpload/image-20240725230731135.png)
+句子成分就是构成句子的各个部分。英语的句子成分总共七个：**主语、谓语、宾语、表语、补语、定语、状语**，还有一个不太重要的**同位语**
 
 
 
+## 一、主语
 
-## 代词
+**主语就是一句话主要叙述的对象或者这句话主要讲的内容。**
 
-### 人称代词
+- 我是中国人。这里主要讲的是我，所以我是主语
+- l am a teacher. 这里的主语就是 I
+
+能够充当主语的词语有：**名词、代词、数次、动词不定式、动名词短语、句子、其他**。
+
+
+
+### 1.1 名词
+
+名词都可以作主语，名词就是世间万物的名词。比如人名，也是一个名词。
+
+- Alan is a teacher. 艾伦是老师。(人名Alan作主语)
+- Hubei is beautiful. 湖北是美丽的。(地名Hubei作主语)
+- The book is expensive. 这本书很贵。(普通名词book作主语）
+- English is easy. 英语很容易。(专有名词English作主语）
+
+
+
+### 1.2 代词
+
+​	**代词就是为了避免重复而代替名词的词语**。生活中使用代词的频率非常高，因为不能老是重复相同的名词。比如，
+- 我们不会说"Nick is a teacher, Nick is from Guangxi, Nick teaches English in Guangdong"，连续用了三
+  个“Nick”
+- 所以应该说"Nick is a teacher, He is from Guangxi, He teaches English in Guangdong"
+
+​	代替人的代词就是人称代词(有些人称代词也可以指事物)。上面的例句的“He"代替了"NicK"，所以"He“就是一个人称代词。
+
+
+
+#### 1.2.1 人称代词
+
+**人称代词又分为主格、宾格**。主格就是作主语的格式，宾格就是作宾语的格式。主格和宾格都是指同一个意思，知识作用不同。主格才能作主语，宾格不可以
+
+- I am a teacher. 我是老师。（人称代词主格I作主语，注意，不能说：me is a teacher）
+- She is beautiful. 她很漂亮。（人称代词主格She作主语，不能说：Her is beautiful）
 
 <div>
     <table>
@@ -221,7 +165,7 @@
 
 
 
-### 指示代词
+#### 1.2.2 指示代词
 
 | 指示代词                  | 数   | 用法                                       |
 | ------------------------- | ---- | ------------------------------------------ |
@@ -255,7 +199,7 @@
 
 
 
-### 不定代词
+#### 1.2.3 不定代词
 
 <div>
     <table>
@@ -314,7 +258,7 @@
 </div>
 
 
-### 疑问代词
+#### 1.2.4 疑问代词
 
 <div>
     <table>
@@ -391,6 +335,21 @@
       1. 你父母是干什么的（作表语）
    2. What interests do you have
       1. 你有什么爱好（作定语）
+
+
+
+### 1.3 数词
+
+数词就是1 2 3 4 5.... （基数词）或者第一、第二、第三（序数词）。不管是基数词还是序数词都可以作主语
+
+- The first is important. 第一很重要
+- Eight is a lucky number. 8是一个幸运号码。
+
+
+
+### 1.4 动词不定式或动词不定式短语
+
+
 
 
 
