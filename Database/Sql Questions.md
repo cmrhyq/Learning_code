@@ -2036,3 +2036,99 @@ from Seat,(
 order by id asc;
 ```
 
+
+
+## [买下所有产品的客户](https://leetcode.cn/problems/customers-who-bought-all-products/description/)
+
+`Customer` 表：
+
+```
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| customer_id | int     |
+| product_key | int     |
++-------------+---------+
+该表可能包含重复的行。
+customer_id 不为 NULL。
+product_key 是 Product 表的外键(reference 列)。
+```
+
+`Product` 表：
+
+```
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| product_key | int     |
++-------------+---------+
+product_key 是这张表的主键（具有唯一值的列）。
+```
+
+编写解决方案，报告 `Customer` 表中购买了 `Product` 表中所有产品的客户的 id。
+
+返回结果表 **无顺序要求** 。
+
+返回结果格式如下所示。
+
+**示例 1：**
+
+```
+输入：
+Customer 表：
++-------------+-------------+
+| customer_id | product_key |
++-------------+-------------+
+| 1           | 5           |
+| 2           | 6           |
+| 3           | 5           |
+| 3           | 6           |
+| 1           | 6           |
++-------------+-------------+
+Product 表：
++-------------+
+| product_key |
++-------------+
+| 5           |
+| 6           |
++-------------+
+输出：
++-------------+
+| customer_id |
++-------------+
+| 1           |
+| 3           |
++-------------+
+解释：
+购买了所有产品（5 和 6）的客户的 id 是 1 和 3 。
+```
+
+**解析**
+
+```mysql
+-- 对比分组以后每个组的product_key是否和Product表一致可得到结果
+select customer_id
+from Customer
+group by customer_id
+having count(distinct product_key) = (
+    select count(*)
+    from Product
+)
+-- 为什么要加distinct，关键点在于题目描述中的“该表存在重复数据”
+-- 可以用以下sql验证是否存在重复行
+select *
+from Customer
+where customer_id in (
+    select customer_id
+    from Customer
+    group by customer_id
+    having count(*)>1
+)
+  and product_key in (
+    select product_key
+    from Customer
+    group by product_key
+    having count(*)>1
+)
+```
+
