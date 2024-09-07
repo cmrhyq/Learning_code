@@ -828,3 +828,38 @@ class ClassMethod {
   1. 同一个类中的方法调用:直接调用即可。比如 print(参数)
   2. 跨类中的方法A类调用B类方法:需要通过对象名调用。比如 对象名,方法名(参数)
 
+### 方法的递归
+
+递归就是方法自己调用自己，每次调用都传入不同的变量
+
+Demo 1
+
+```java
+class ClassRecursion {
+    
+    public void test(int n){
+        if (n > 2){
+            test(n - 1);
+        }
+        System.out.println(n);
+    }
+}
+```
+
+![image-20240908004440769](MarkdownImageUpload/image-20240908004440769.png)
+
+Demo 2
+
+```java
+class ClassRecursion {
+    
+    public void factorial(int n){
+        if(n == 1){
+            return 1;
+        } else {
+            return factorial(n-1)*n;
+        }
+    }
+}
+```
+
