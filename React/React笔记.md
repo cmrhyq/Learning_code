@@ -124,8 +124,66 @@ import '@/assets/styles/global.scss'
     }
   }
 ###### 10.模块化引入scss
-###### 11.
+###### 11.配置ui框架样式自动按需引入
+###### 12.编写路由
 ```
+
+
+
+### React路由
+
+第一种
+
+```jsx
+// router/index.tsx
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import App from "../App.tsx";
+import Login from "../components/login/login.tsx";
+import Dashboard from "../components/dashboard/dashboard.tsx";
+import PermissionDenied from "../components/Error/PermissionDenied.tsx";
+import NotFound from "../components/Error/NotFound.tsx";
+import ServerError from "../components/Error/ServerError.tsx";
+const baseRouter = () => (
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<App/>}>
+                <Route path="/login" element={<Login/>}></Route>
+                <Route path="/dashboard" element={<Dashboard/>}></Route>
+                <Route path="/403" element={<PermissionDenied/>}></Route>
+                <Route path="/404" element={<NotFound/>}></Route>
+                <Route path="/500" element={<ServerError/>}></Route>
+            </Route>
+        </Routes>
+    </BrowserRouter>
+)
+export default baseRouter;
+// main.tsx
+import {StrictMode} from 'react'
+import {createRoot} from 'react-dom/client'
+import 'reset-css'
+import '@/assets/styles/global.scss'
+import Router from './router'
+createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+        {/*<App />*/}
+        <Router/>
+    </StrictMode>,
+)
+// App.tsx
+import {Outlet} from "react-router-dom";
+function App() {
+
+    return (
+        <div>
+            {/*占位符组件，类似于窗口*/}
+            <Outlet></Outlet>
+        </div>
+    )
+}
+export default App
+```
+
+
 
 
 
