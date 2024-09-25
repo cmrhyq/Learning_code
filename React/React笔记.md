@@ -183,6 +183,66 @@ function App() {
 export default App
 ```
 
+第二种
+
+```jsx
+// router/index.tsx
+const routes = [
+    {
+        path: '/',
+        element: <Navigate to="/dashboard"/>
+    },
+    {
+        path: '/login',
+        element: <Login/>
+    },
+    {
+        path: '/dashboard',
+        element: <Dashboard/>
+    },
+    {
+        path: '/403',
+        element: <PermissionDenied/>
+    },
+    {
+        path: '/404',
+        element: <NotFound/>
+    },
+    {
+        path: '/500',
+        element: <ServerError/>
+    },
+]
+export default routes;
+// main.tsx
+import {StrictMode} from 'react'
+import {createRoot} from 'react-dom/client'
+import 'reset-css'
+import '@/assets/styles/global.scss'
+import App from './App'
+import { BrowserRouter } from "react-router-dom"
+
+createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </StrictMode>,
+)
+// App.tsx
+import {useRoutes,Outlet} from "react-router-dom";
+import router from "./router"
+function App() {
+	const element = useRoutes(router)
+    return (
+        <div>
+            {element}
+        </div>
+    )
+}
+export default App
+```
+
 
 
 
