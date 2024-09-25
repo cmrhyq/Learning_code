@@ -243,7 +243,9 @@ function App() {
 export default App
 ```
 
+**注意：**
 
+- 如果路由使用了懒加载的话，那么就得加上`<Suspense fallback={<div>Loading...</div>}></Suspense>`
 
 
 
